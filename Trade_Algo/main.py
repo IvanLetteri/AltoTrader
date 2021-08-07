@@ -10,8 +10,9 @@ from datetime import datetime
 
 # set the input data with default values
 # adjust the windows to our time series!!!
-XETH_input = set_input(asset1='XETH', asset2='XXBT', long=100, short=47);XETH_history = history(XETH_input);XETH_broker = Broker(XETH_input)
-
+XETH_input = set_input(asset1='XETH', asset2='XXBT', long=100, short=47)
+XETH_history = history(XETH_input)
+XETH_broker = Broker(XETH_input)
 
 # initialize the trading history:  it will read the ETH stream from ftp
 
@@ -19,7 +20,7 @@ XETH_input = set_input(asset1='XETH', asset2='XXBT', long=100, short=47);XETH_hi
 # initialize the broker with the strating values
 XETH_broker.initialize()
 
-XETH_trade = run_strategy(XETH_input,XETH_broker,XETH_history,timeInterval=600)
+XETH_trade = run_strategy(XETH_input, XETH_broker, XETH_history, timeInterval=600)
 
 def run_trader(interval=600):
     try:
